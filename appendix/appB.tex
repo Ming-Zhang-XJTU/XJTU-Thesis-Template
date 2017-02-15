@@ -1,0 +1,55 @@
+% -*-coding: utf-8 -*-
+
+\BiAppChapter{算法与代码}{Algorithms and Codes}
+
+对于数学、计算机和电子信息专业，算法和代码也是经常用到的排版技巧。
+
+%=========================================================================================
+\BiSection{算法}{Algorithms}
+
+算法描述使用 algorithm2e 宏包，效果如算法~\ref{alg_appB_lms}~所示。
+
+\begin{algorithm}[ht]
+	\caption{LMS~算法详细描述 \label{alg_appB_lms}}
+	\IncMargin{2em}
+	\DontPrintSemicolon
+	\KwIn{$\mbf{x}(k), \quad \mu, \quad \mbf{w}(0)$}
+	\KwOut{$y(k), \quad \varepsilon(k)$}
+	%
+	\For{$k=0,1,\cdots$}{
+		$y(k) = \mbf{w}^H(k)\mbf{x}(k)$ \tcp*{output signal}
+		$\varepsilon(k) = d(k)-y(k)$ \tcp*{error signal}
+		$\mbf{w}(k+1) = \mbf{w}(k)+\mu\varepsilon^{\ast}(k)\mbf{x}(k)$ \tcp*{weight vector update}
+	}
+\end{algorithm}
+
+
+%=========================================================================================
+\BiSection{代码}{Codes} 
+
+源代码使用 listings 宏包，LMS~算法的~Verilog~模块端口声明如代码~\ref{code_appB_lms}~所示。
+
+{\fontsize{10pt}{0.5\baselineskip}\selectfont
+	\begin{lstlisting}[caption={空时~LMS~算法~Verilog~模块端口声明},label={code_appB_lms}]
+	module stap_lms
+	#(
+	parameter      M                = 4,    // number of antennas
+	               L                = 5,    // length of FIR filter
+	               W_IN             = 18,   // wordlength of input data
+	               W_OUT            = 18,   // wordlength of output data
+	               W_COEF           = 20    // wordlength of weights
+	)(
+	output  signed [W_OUT-1:0]      y_i,    // in-phase component of STAP output
+	output  signed [W_OUT-1:0]      y_q,    // quadrature component of STAP output
+	output                          vout,   // data valid flag of output (high)
+	input          [M*W_IN-1:0]     u_i,    // in-phase component of M antennas
+	input          [M*W_IN-1:0]     u_q,    // quadrature component of M antennas
+	input                           vin,    // data valid flag for input (high)
+	input                           clk,    // clock signal
+	input                           rst     // reset signal (high)
+	);
+	\end{lstlisting}
+}
+
+% 在最后一个附录 tex 文件末尾添加以下命令，使研究成果从奇数页开始
+\clearpage{\pagestyle{empty}\cleardoublepage}

@@ -1,0 +1,36 @@
+% !Mode:: "TeX:UTF-8"
+
+\documentclass[openany,twoside,nofonts,UTF8]{ctexbook}
+\input{setup/package}
+\graphicspath{{figures/}}
+
+%===================================== Cover and TOC =====================================
+\begin{document}
+\input{setup/format}
+\frontmatter
+\input{setup/cover}
+\input{setup/abstract}
+\input{setup/content}
+
+%======================================= Main Body =======================================
+\mainmatter\defaultfont\sloppy\raggedbottom
+\include{body/chapter_1}
+\include{body/chapter_2}
+\include{appendix/acknowledgements}
+
+%======================================= Reference =======================================
+\wuhao\selectfont
+\bibliographystyle{bib/gbt-7714-2015-numerical}
+\addcontentsline{toc}{chapter}{参考文献}
+\addcontentsline{toe}{chapter}{References}
+\addtolength{\bibsep}{-0.8em}
+\bibliography{bib/mybib}
+
+%======================================= Appendix ========================================
+\include{setup/formatApp}
+\include{appendix/appA}
+\include{appendix/appB}
+\include{appendix/publications}
+\include{appendix/authorization}
+
+\end{document} 

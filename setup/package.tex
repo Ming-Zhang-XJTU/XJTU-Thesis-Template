@@ -1,0 +1,76 @@
+% !Mode:: "TeX:UTF-8"
+
+\usepackage[a4paper,top=21.5mm,bottom=19.5mm,left=26mm,right=26mm,includehead,includefoot]{geometry}					% 控制页面尺寸
+\usepackage{titletoc}       % 控制目录的宏包
+\usepackage{titlesec}       % 控制标题的宏包
+\usepackage{fancyhdr}       % 页眉和页脚的相关定义
+\usepackage{color}          % 支持彩色
+\usepackage{graphicx}		% 处理图片
+\usepackage{tabularx}		% 可伸缩表格
+\usepackage{multirow}       % 表格可以合并多个row
+\usepackage{booktabs}       % 表格横的粗线；\specialrule{1pt}{0pt}{0pt}
+\usepackage{longtable}      % 支持跨页的表格。
+\usepackage{enumitem}       % 使用enumitem宏包,改变列表项的格式
+\usepackage{amsmath}        % 公式宏包
+\usepackage{amssymb}		% 符号宏包
+\usepackage{bm}				% 处理数学公式中的黑斜体的宏包
+\usepackage{lmodern}		% 数学公式字体
+\usepackage[amsmath,thmmarks,hyperref]{ntheorem}	% 定理类环境宏包
+\usepackage[hang]{subfigure}						% 图形或表格并排排列
+\usepackage[subfigure]{ccaption}					% 支持双语标题
+\usepackage[sort&compress,numbers]{natbib}			% 支持引用缩写的宏包
+\usepackage{fontspec}		% 字体设置宏包
+%\usepackage{etoolbox}		% primarily towards LaTeX class and package authors.
+%\usepackage{xltxtra}		% 提供了针对XeTeX的改进，自动调用xunicode宏包
+
+% 生成有书签的 pdf 及其开关, 该宏包应放在所有宏包的最后, 宏包之间有冲突
+\usepackage[xetex,
+            bookmarksnumbered=true,
+            bookmarksopen=true,
+            colorlinks=false,
+            pdfborder={0 0 1},
+            citecolor=blue,
+            linkcolor=red,
+            anchorcolor=green,
+            urlcolor=blue,
+            breaklinks=true
+            ]{hyperref}
+
+% 算法的宏包，注意宏包兼容性，先后顺序为float、hyperref、algorithm(2e)，否则无法生成算法列表
+\usepackage[plainruled,linesnumbered,algochapter]{algorithm2e}
+
+\usepackage{listings}		% 为了避免与页眉的兼容问题可将listings放入table环境中
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstset{%
+	language={[ISO]C++},				% 设置语言
+	alsolanguage=Matlab,				% 可以添加多个语言选项
+	alsolanguage=Verilog,
+	morekeywords={numerictype,fimath,fipref,fi,trh},
+	commentstyle=\color{codegreen},		% 注释颜色
+	keywordstyle=\color{blue},			% 代码关键字颜色
+	stringstyle=\color{codepurple},		% 代码中字符串颜色
+	frame=single,			% 设置边框, 
+	xleftmargin=1.7em,		% 设定listing左边空白 
+	numbers=left,			% 左侧显示行号
+	numberstyle=\small,		% 行号字体用小号
+	breaklines=true,		% 对过长的代码自动换行 
+	columns=flexible,		% 调整字符之间的距离
+	tabsize=4				% table 长度
+}
+
+% 带圆圈的脚注
+\usepackage{pifont}
+\usepackage[flushmargin,para,symbol*]{footmisc}
+\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
+	{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
+\setfnsymbol{circled}
+
+% 字体设置，Windows自带黑体(simhei.ttf)和宋体(simsun.ttf)
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKfamilyfont{hei}{SimHei}
+\newcommand{\hei}{\CJKfamily{hei}}
