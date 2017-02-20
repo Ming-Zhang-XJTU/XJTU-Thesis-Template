@@ -24,15 +24,15 @@
 	\renewcommand{\arraystretch}{1.2}
 	\centering\wuhao
 	\caption{表题也是五号字} \label{tab_ch2} \vspace{2mm}
-	\begin{tabular}{c@{\hspace{1cm}}c@{\hspace{1cm}}c@{\hspace{1cm}}c}
-	\toprule[1.2pt]
+	\begin{tabularx}{\textwidth}{*{4}Y}
+	\toprule[1.5pt]
 		Interference & DOA (deg) & Bandwidth (MHz) & INR (dB) \\
-	\midrule[0.8pt]
+	\midrule[1pt]
 		1 & $-30$ & 20 & 60 \\
 		2 & 20 & 10 & 50 \\
 		3 & 40 & 5 & 40 \\
-	\bottomrule[1.2pt]
-	\end{tabular}
+	\bottomrule[1.5pt]
+	\end{tabularx}
 \end{table}
 
 %=========================================================================================

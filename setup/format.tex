@@ -144,6 +144,9 @@
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}%使表编号为 7-1 的格式
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}%使公式编号为 7-1 的格式
 
+% 把 tabularx 宏包的列格式左对齐改成居中对齐
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
 % 定制浮动图形和表格标题样式
 \captionnamefont{\wuhao}
 \captiontitlefont{\wuhao}
