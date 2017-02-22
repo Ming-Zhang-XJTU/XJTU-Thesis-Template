@@ -66,8 +66,8 @@
 \renewcommand\chaptername{\thechapter}
 \CTEXsetup[name={,}]{chapter}
 \setcounter{secnumdepth}{4} \setcounter{tocdepth}{2}
-\titleformat{\chapter}{\center\sanhao}{\chaptertitlename}{0.5em}{}
-\titlespacing{\chapter}{0pt}{-5mm}{5mm}
+\titleformat{\chapter}{\center\sanhao}{\chaptertitlename}{0.8em}{}
+\titlespacing{\chapter}{0pt}{-5.3mm}{4.2mm}
 \titleformat{\section}{\xiaosan}{\thesection}{0.5em}{}
 \titlespacing{\section}{0pt}{3mm}{3mm}
 \titleformat{\subsection}{\sihao}{\thesubsection}{0.5em}{}
@@ -109,7 +109,7 @@
 %======================================== Header =========================================
 % 定义页眉和页脚
 \newcommand{\makeheadrule}{
-\rule[8pt]{\textwidth}{0.4pt} \\[-22pt]
+\rule[6pt]{\textwidth}{0.4pt} \\[-18pt]
 \rule{\textwidth}{0.4pt}}
 \renewcommand{\headrule}{
     {\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
@@ -117,11 +117,11 @@
 \pagestyle{fancyplain}
 
 % 不要注销这一行，否则页眉会变成：“第1章1  绪论”样式
-\renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~~\ #1}{}}
 \fancyhf{}
 \fancyhead[CO]{\wuhao\leftmark}
 \fancyhead[CE]{\wuhao 西安交通大学博士学位论文}
-\fancyfoot[LE,RO]{\wuhao\thepage}
+\fancyfoot[LE,RO]{\xiaowu \thepage}
 
 %======================================= Theorem =========================================
 % 定理环境格式定义
