@@ -7,23 +7,23 @@
 %=========================================================================================
 \BiSection{图}{Figures}
 
-图~\ref{fig_ch2}~是用~Tikz~画的，Visio~画不出这么好看的图。
+图 \ref{fig_ch1} 是用 Tikz 画的，Visio 画不出这么好看的图。
 %
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\textwidth]{echoes}
-\caption{图注是五号字。} \label{fig_ch2}
+\caption{图注是五号字。} \label{fig_ch1}
 \end{figure}
 
 %=========================================================================================
 \BiSection{表}{Tables} 
 
-表格要求采用三线表，如表~\ref{tab_ch2}~所示。
+表格要求采用三线表，如表 \ref{tab_ch1} 所示。
 %
 \begin{table}
 	\renewcommand{\arraystretch}{1.2}
 	\centering\wuhao
-	\caption{表题也是五号字} \label{tab_ch2} \vspace{2mm}
+	\caption{表题也是五号字} \label{tab_ch1} \vspace{2mm}
 	\begin{tabularx}{\textwidth}{*{4}Y}
 	\toprule[1.5pt]
 		Interference & DOA (deg) & Bandwidth (MHz) & INR (dB) \\
@@ -39,18 +39,18 @@
 \BiSection{公式}{Equations}
 \BiSubsection{单个公式}{Equations}
 
-单个公式的编号如式~(\ref{equ_ch2_pdf})~所示，该式是标准正态分布的概率密度函数~\cite{Manolakis2005}，从公式可知~\LaTeX~排版的公式比~MathType~美观，而且公式编写效率更高。
+单个公式的编号如式 (\ref{equ_ch1_pdf}) 所示，该式是标准正态分布的概率密度函数 \cite{Manolakis2005}，从公式可知 \LaTeX 排版的公式比 MathType 美观，而且公式编写效率更高。
 %
-\begin{equation} \label{equ_ch2_pdf}
+\begin{equation} \label{equ_ch1_pdf}
 f_Z(z) = \frac{1}{\pi\sigma^2} \exp\left(-\frac{|z-\mu_Z|^2}{\sigma^2}\right)
 \end{equation}
 
 %-----------------------------------------------------------------------------------------
 \BiSubsection{多个公式}{Subequations}
 
-多个公式作为一个整体可以进行二级编号，如~(\ref{equ_ch2_fourier})~所示，该式是连续时间~Fourier~变换的正反变换公式~\cite{Vetterli2014}。
+多个公式作为一个整体可以进行二级编号，如 (\ref{equ_ch1_fourier}) 所示，该式是连续时间~Fourier~变换的正反变换公式 \cite{Vetterli2014}。
 %
-\begin{subequations} \label{equ_ch2_fourier}
+\begin{subequations} \label{equ_ch1_fourier}
 \begin{align}
 X(f) &= \int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\dif t \\
 x(t) &= \int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\dif f

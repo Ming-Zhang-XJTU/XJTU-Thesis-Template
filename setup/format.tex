@@ -36,9 +36,12 @@
 \predisplaypenalty=0
 \allowdisplaybreaks[4]
 
+% 允许断页时给上一页底部留有一定空白，避免拉大标题和行距
+\raggedbottom
+
 %========================================= TOC ===========================================
 % 中文目录格式定义
-\renewcommand\contentsname{目\quad 录}
+\renewcommand\contentsname{目~~~~录}
 \titlecontents{chapter}[3.8em]{\hspace{-3.8em}}{\thecontentslabel~~}{}{\titlerule*[4pt]{.}\contentspage}
 \dottedcontents{section}[38pt]{}{22pt}{0.3pc}
 \dottedcontents{subsection}[70pt]{}{32pt}{0.3pc}
@@ -62,9 +65,8 @@
 
 %======================================= Chapter =========================================
 % 章节格式定义
-\CTEXsetup[number={\arabic{chapter}}]{chapter}
 \renewcommand\chaptername{\thechapter}
-\CTEXsetup[name={,}]{chapter}
+\CTEXsetup[name={,},number={\arabic{chapter}}]{chapter}
 \setcounter{secnumdepth}{4} \setcounter{tocdepth}{2}
 \titleformat{\chapter}{\center\sanhao}{\chaptertitlename}{0.8em}{}
 \titlespacing{\chapter}{0pt}{-5.3mm}{4.2mm}
@@ -79,6 +81,7 @@
     \addcontentsline{toe}{chapter}{\xiaosi \thechapter\hspace{0.5em} #3}}
 \def\@@BiChapter#1#2{\chapter{#1}
     \addcontentsline{toe}{chapter}{\xiaosi \thechapter\hspace{0.5em}{\boldmath #2}}}
+
 % 定义双标题
 \newcommand{\BiSection}[2]{
 	\section{#1}
@@ -124,22 +127,26 @@
 \fancyfoot[LE,RO]{\xiaowu \thepage}
 
 %======================================= Theorem =========================================
-% 定理环境格式定义
+% 定理正文和标题字体
 \theoremstyle{plain}
-\theorembodyfont{\rmfamily}
 \theoremheaderfont{\hei\rmfamily}
+\theorembodyfont{\rmfamily}
+\theoremseparator{：}
+
+% 定理环境和上下文之间的距离
 \setlength{\theorempreskipamount}{8pt}
 \setlength{\theorempostskipamount}{8pt}
-\theoremseparator{：}
+
+% 定义新的定理环境
 \theoremsymbol{$\Diamond$} \newtheorem{definition}{\hskip 2em \hei 定义}[chapter]
 \theoremsymbol{$\blacklozenge$} \newtheorem{example}{\hskip 2em \hei 例}[chapter]
 \theoremsymbol{$\square$} \newtheorem{theorem}{\hskip 2em \hei 定理}[chapter]
 \theoremsymbol{$\blacksquare$} \newtheorem*{proof}{\hskip 2em \hei 证明}
 
 %========================================= FTE ===========================================
-% 图表公式的编号为1-1格式，子图编号为 a) 的格式
+% 图表公式的编号为1-1格式，子图编号为 (a) 的格式
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
-\renewcommand{\thesubfigure}{\alph{subfigure})}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
 \renewcommand{\p@subfigure}{\thefigure~}
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}%使表编号为 7-1 的格式
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}%使公式编号为 7-1 的格式
@@ -187,6 +194,7 @@
 \renewcommand\thealgocf{\csname the\algocf@within\endcsname-\@arabic\c@algocf}
 \SetAlCapSty{textrm}
 \SetAlCapSkip{1ex}
+\makeatother
 
 % 更改代码标题
 \renewcommand{\lstlistingname}{代码}
@@ -198,10 +206,3 @@
 \let\temp\addcontentsline
 \gdef\addcontentsline{\phantomsection\temp}
 \gdef\hitempty{}
-
-\renewcommand\frontmatter{\cleardoublepage
-	\@mainmatterfalse
-	\pagenumbering{Roman}
-}
-
-\makeatother
