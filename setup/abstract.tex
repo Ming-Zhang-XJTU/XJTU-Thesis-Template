@@ -3,7 +3,9 @@
 %-----------------------------------------------------------------------------------------
 % 中文摘要
 \titlespacing{\chapter}{0pt}{23mm}{6mm}
-\BiAppendixChapter{摘~~~~要}{Abstract (In Chinese)}
+%\BiAppendixChapter{摘~~~~要}{ABSTRACT (Chinese)}% 替换下面两行命令
+\markboth{摘~~~~要}{摘~~~~要}
+\chapter*{摘~~~~要}
 \setcounter{page}{1}
 \pagenumbering{Roman}
 \defaultfont
@@ -33,11 +35,9 @@ BBS~经常看到同学们询问交大博士论文的 \LaTeX 模板，正好今�
 %-----------------------------------------------------------------------------------------
 % 英文摘要
 \titlespacing{\chapter}{0pt}{20.5mm}{5mm}
+%\BiAppendixChapter{ABSTRACT}{ABSTRACT (English)}% replace the following two lines
+\markboth{ABSTRACT}{ABSTRACT}
 \chapter*{ABSTRACT}
-\markboth{Abstract}{Abstract}
-\phantomsection
-\addcontentsline{toc}{chapter}{\xiaosi Abstract}
-\addcontentsline{toe}{chapter}{\xiaosi Abstract (In English)}
 
 \vskip-50mm
 {\xiaosi\bfseries 
