@@ -2,10 +2,6 @@
 
 %========================================= Font ==========================================
 % 定义字号
-\newcommand{\yihao}{\fontsize{26pt}{26pt}\selectfont}       % 一号, 1.倍行距
-\newcommand{\xiaoyi}{\fontsize{24pt}{24pt}\selectfont}      % 小一, 1.倍行距
-\newcommand{\erhao}{\fontsize{22pt}{22pt}\selectfont}		% 二号, 1.倍行距
-\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}      % 小二, 单倍行距
 \newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 1.倍行距
 \newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 1.倍行距
 \newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 1.倍行距
@@ -66,7 +62,7 @@
 %======================================= Chapter =========================================
 % 章节格式定义
 \renewcommand\chaptername{\thechapter}
-\CTEXsetup[name={,},number={\arabic{chapter}}]{chapter}
+\ctexset{chapter={name={,},number={\arabic{chapter}}}}
 \setcounter{secnumdepth}{4} \setcounter{tocdepth}{2}
 \titleformat{\chapter}{\center\sanhao}{\chaptertitlename}{0.8em}{}
 \titlespacing{\chapter}{0pt}{-5.3mm}{4.2mm}
@@ -145,11 +141,13 @@
 
 %========================================= FTE ===========================================
 % 图表公式的编号为1-1格式，子图编号为 (a) 的格式
+%\renewcommand{\figurename}{Figure}% 英文论文图标题以 Figure 开头
+%\renewcommand{\tablename}{Table}% 英文论文表标题以 Table 开头
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 \renewcommand{\p@subfigure}{\thefigure~}
-\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}%使表编号为 7-1 的格式
-\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}%使公式编号为 7-1 的格式
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
+\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
 
 % 把 tabularx 宏包的列格式左对齐改成居中对齐
 \newcolumntype{Y}{>{\centering\arraybackslash}X}

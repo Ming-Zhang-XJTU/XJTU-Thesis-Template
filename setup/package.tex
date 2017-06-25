@@ -1,6 +1,6 @@
 % !Mode:: "TeX:UTF-8"
 
-\usepackage[
+\usepackage[%
 	a4paper,
 	top=21mm,
 	bottom=20mm,
@@ -14,6 +14,7 @@
 \usepackage{fancyhdr}       % 页眉和页脚的相关定义
 \usepackage{color}          % 支持彩色
 \usepackage{graphicx}		% 处理图片
+\usepackage{float}			% 浮动体处理
 \usepackage{tabularx}		% 可伸缩表格
 \usepackage{multirow}       % 表格可以合并多个row
 \usepackage{booktabs}       % 表格横的粗线；\specialrule{1pt}{0pt}{0pt}
@@ -28,18 +29,17 @@
 \usepackage[subfigure]{ccaption}					% 支持双语标题
 \usepackage[sort&compress,numbers]{natbib}			% 支持引用缩写的宏包
 \usepackage{fontspec}		% 字体设置宏包
-%\usepackage{etoolbox}		% primarily towards LaTeX class and package authors.
-%\usepackage{xltxtra}		% 提供了针对XeTeX的改进，自动调用xunicode宏包
 
 % 生成有书签的 pdf 及其开关, 该宏包应放在所有宏包的最后, 宏包之间有冲突
-\usepackage[xetex,
-            bookmarksnumbered=true,
-            bookmarksopen=true,
-            colorlinks=false,
-            pdfborder={0 0 0.7},
-            citebordercolor={0 0 1},
-            breaklinks=true
-            ]{hyperref}
+\usepackage[%
+	xetex,
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    colorlinks=false,
+    pdfborder={0 0 0.7},
+    citebordercolor={0 0 1},
+    breaklinks=true
+]{hyperref}
 
 % 算法的宏包，注意宏包兼容性，先后顺序为float、hyperref、algorithm(2e)，否则无法生成算法列表
 \usepackage[plainruled,linesnumbered,algochapter]{algorithm2e}
