@@ -2,12 +2,12 @@
 
 %========================================= Font ==========================================
 % 定义字号
-\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 1.倍行距
-\newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 1.倍行距
-\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 1.倍行距
-\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 1.倍行距
-\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 单倍行距
-\newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 单倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}      % 三号, 1.0倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{15pt}\selectfont}     % 小三, 1.0倍行距
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}       % 四号, 1.0倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}      % 小四, 1.0倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}   % 五号, 1.0倍行距
+\newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}        % 小五, 1.0倍行距
 
 % 默认字体
 \makeatletter
@@ -108,8 +108,8 @@
 %======================================== Header =========================================
 % 定义页眉和页脚
 \newcommand{\makeheadrule}{
-\rule[6pt]{\textwidth}{0.4pt} \\[-18pt]
-\rule{\textwidth}{0.4pt}}
+\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
+\rule{\textwidth}{0.5pt}}
 \renewcommand{\headrule}{
     {\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
      \makeheadrule}}
@@ -198,6 +198,8 @@
 \renewcommand{\lstlistingname}{代码}
 \renewcommand{\thelstlisting}{\arabic{chapter}-\arabic{lstlisting}}
 
+% 上角标形式的参考文献引用格式
+\newcommand{\citeup}[1]{\textsuperscript{\cite{#1}}}
 %======================================== Other ==========================================
 % 避免宏包 hyperref 和 arydshln 不兼容带来的目录链接失效的问题。
 \def\temp{\relax}
