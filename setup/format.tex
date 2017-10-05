@@ -20,6 +20,7 @@
 	\let\@listi\@listI
 }
 
+\renewcommand{\footnotesize}{\wuhao}
 % 设置行距和段落间垂直距离
 \setlength{\parindent}{2em}
 \setlength{\parskip}{3pt plus1pt minus1pt}
@@ -45,7 +46,7 @@
 % 英文目录格式定义： 细点\@dottedtocline  粗点\@dottedtoclinebold
 \renewcommand*\l@chapter{\@dottedtocline{0}{0em}{5em}}
 \renewcommand*\l@section{\@dottedtocline{1}{1em}{1.8em}}
-\renewcommand*\l@subsection{\@dottedtocline{2}{2.9em}{2.5em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.8em}{2.5em}}
 \def\@dotsep{0.75}           % 定义英文目录的点间距
 \setlength\leftmargini {50pt}
 \setlength\leftmarginii {50pt}
@@ -171,12 +172,12 @@
 \newcommand{\iprod}[2]{\langle #1,#2 \rangle}
 
 % 调整罗列环境的布局
-\setitemize{leftmargin=3.23em,itemsep=0em,partopsep=0em,parsep=0em,topsep=-0em}
-\setenumerate{leftmargin=3.45em,itemsep=0em,partopsep=0em,parsep=0em,topsep=0em}
+\setitemize{leftmargin=3em,itemsep=0em,partopsep=0em,parsep=0em,topsep=-0em}
+\setenumerate{leftmargin=3.2em,itemsep=0em,partopsep=0em,parsep=0em,topsep=0em}
 
 % 自定义项目列表标签及格式 \begin{publist} 列表项 \end{publist}
 \newcounter{pubctr} %自定义新计数器
-\newenvironment{publist}{
+\newenvironment{publist}{\wuhao\selectfont
 	\begin{list}{[\arabic{pubctr}]}{
      \usecounter{pubctr}
      \setlength{\leftmargin}{2em}		% 左边界

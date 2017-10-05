@@ -2,22 +2,22 @@
 
 %-----------------------------------------------------------------------------------------
 % 中文摘要
-\titlespacing{\chapter}{0pt}{23mm}{6mm}
-%\BiAppendixChapter{摘~~~~要}{ABSTRACT (Chinese)}% 替换下面两行命令
 \markboth{摘~~~~要}{摘~~~~要}
-\chapter*{摘~~~~要}
 \setcounter{page}{1}
 \pagenumbering{Roman}
 \defaultfont
 
-\vskip-50mm
-{\zihao{-4}\hei
-	\noindent 论文题目：西安交通大学博士学位论文 \LaTeX 模板 \\
-	\noindent 学科名称：电子科学与技术 \\
-	\noindent 学位申请人：张明 \\
-	\noindent 指导教师：张安学~教授
+\begin{table}[!ht]\xiaosi\hei\vskip-1.5mm
+	\begin{tabular}{@{}l}
+		论文题目：西安交通大学博士学位论文 \LaTeX 模板 \\
+		学科名称：电子科学与技术 \\
+		学位申请人：张明 \\
+		指导教师：张安学~教授
+	\end{tabular}
+\end{table}
+\noindent\parbox[c][15mm][c]{\textwidth}{
+	\centering\sanhao 摘~~~~要
 }
-\vskip22mm
 
 虽然论文排版是一项基本技能，但是同学们经常被各种格式整得晕头转向，加之 Word 排版不够美观，版本管理麻烦，因此开发 \LaTeX 模板非常重要。
 
@@ -26,36 +26,38 @@
 BBS 经常看到同学们询问交大博士论文的 \LaTeX 模板，正好今年也要开始写博士论文了，所以就萌发了编写一个新的模板\footnote{运行平台是 \color{red}Windows + TexLive2016 + XeLaTex。}。本模板是按照教务处发布的博士学位论文 2014 版本的要求设计的，在编写过程中参考了其他学校的优秀作品，特别是哈尔滨工业大学的模板。
 
 \vspace{\baselineskip}
-\hangafter=1\hangindent=62pt
-\noindent{\hei 关\hspace{0.5em}键\hspace{0.5em}词：} 西安交通大学，博士论文，模板，西安交通大学，博士论文，模板，西安交通大学，博士论文，模板
-
-\vspace{\baselineskip}
-\noindent{\hei 论文类型：} 应用基础
+{\zihao{5} \hangafter=1\hangindent=50.7pt
+	\noindent{\fontsize{10pt}{10pt}\selectfont\hei 关\hspace{0.5em}键\hspace{0.5em}词}：西安交通大学，博士论文，模板
+	
+	\vspace{\baselineskip}
+	\noindent{\fontsize{10pt}{10pt}\selectfont\hei 论文类型}：应用基础
+}
 \clearpage
 
 %-----------------------------------------------------------------------------------------
 % 英文摘要
-%\BiAppendixChapter{ABSTRACT}{ABSTRACT (English)}% replace the following two lines
 \markboth{ABSTRACT}{ABSTRACT}
-\chapter*{ABSTRACT}
 
-\vskip-53mm% 或者使用 \vskip-51mm
-{\zihao{-4}\bfseries
-	\noindent Title: \LaTeX{} Template for Doctoral Thesis of XJTU \\
-	\noindent Discipline: Electronic Science and Technology \\
-	\noindent Applicant: Ming Zhang \\
-	\noindent Supervisor: Prof. Anxue Zhang
+\begin{table}[!ht]\fontsize{11.5pt}{11.5pt}\selectfont\bfseries\vskip-3mm
+	\begin{tabular}{@{}l}
+		Title: Template for Doctoral Dissertation of XJTU \\
+		Discipline: Electronic Science and Technology \\
+		Applicant: Ming Zhang \\
+		Supervisor: Prof. Anxue Zhang
+	\end{tabular}
+\end{table}
+\noindent\parbox[c][15mm][c]{\textwidth}{
+	\centering\sanhao ABSTRACT
 }
-\vskip22mm
 
 \noindent You will never want to use Word when you have learned how to use \LaTeX.
 
 \vspace{\baselineskip}
-\hangafter=1\hangindent=82pt
-\noindent{\bfseries KEY WORDS:} \LaTeX, TexLive2016, Doctoral Thesis, \LaTeX, TexLive2016, Doctoral Thesis, \LaTeX, TexLive2016, Doctoral Thesis
+{\zihao{5} \hangafter=1\hangindent=69.6pt
+	\noindent{\fontsize{10pt}{10pt}\selectfont\bfseries KEY WORDS}: \LaTeX, TexLive2016, Doctoral Dissertation
 
-\vspace{\baselineskip}
-\noindent{\bfseries TYPE OF DISSERTATION:} Application Fundamentals
+	\vspace{\baselineskip}
+	\noindent{\fontsize{10pt}{10pt}\selectfont\bfseries TYPE OF DISSERTATION}: Application Fundamentals
+}
 
-\titlespacing{\chapter}{0pt}{-5.3mm}{4.2mm}
 \clearpage

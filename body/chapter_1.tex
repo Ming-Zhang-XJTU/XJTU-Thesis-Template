@@ -6,19 +6,33 @@
 
 %=========================================================================================
 \BiSection{图}{Figures}
+\BiSubsection{单幅图}{Single Figure}
 
-图 \ref{fig_ch1} 是用 Tikz 画的，Visio 画不出这么好看的图。
+图 \ref{fig_ch1_echoes} 是用 Tikz 画的，Visio 画不出这么好看的图。
 %
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\textwidth]{echoes}
-\caption{图注是五号字。} \label{fig_ch1}
+\caption{图注是五号字。} \label{fig_ch1_echoes}
 \end{figure}
+
+%-----------------------------------------------------------------------------------------
+\BiSubsection{多幅图}{Multiple Figures}
+
+如果一幅图中包含多幅子图，每一幅子图都要有图注，并且子图用 (a)、(b)、(c) 等方式编号，如图 \ref{fig_ch1_badge} 所示。
+
+\begin{figure}[!ht]
+	\centering
+	\subfigure[灰色的交大校徽]{\includegraphics[width=0.45\textwidth]{xjtu_gray}} \hfill
+	\subfigure[蓝色的交大校徽]{\includegraphics[width=0.45\textwidth]{xjtu_blue}}
+	\caption{交大校徽 \label{fig_ch1_badge}}
+\end{figure}
+
 
 %=========================================================================================
 \BiSection{表}{Tables} 
 
-表格要求采用三线表，如表 \ref{tab_ch1} 所示。
+表格要求采用三线表，与文字齐宽，顶线与底线线粗是 $1\frac12$ 磅，中线线粗是 1 磅，如表 \ref{tab_ch1} 所示\footnote{{\color{red}注意}：图表中的变量与单位通过斜线 $/$ 隔开。}。
 %
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{1.2}
@@ -26,7 +40,7 @@
 	\caption{表题也是五号字} \label{tab_ch1} \vspace{2mm}
 	\begin{tabularx}{\textwidth}{*{4}Y}
 	\toprule[1.5pt]
-		Interference & DOA (deg) & Bandwidth (MHz) & INR (dB) \\
+		Interference & DOA / degree & Bandwidth / MHz & INR / dB \\
 	\midrule[1pt]
 		1 & $-30$ & 20 & 60 \\
 		2 & 20 & 10 & 50 \\
@@ -35,7 +49,7 @@
 	\end{tabularx}
 \end{table}
 
-{\color{red} 通过和研究生院学位办负责论文模板的老师讨论确定：英文论文的格式和中文论文的格式完全相同，写英文论文时把 format.tex 中第 144 和 145 行的注释取消即可。}
+%{\color{red} 通过和研究生院学位办负责论文模板的老师讨论确定：英文论文的格式和中文论文的格式完全相同，写英文论文时把 format.tex 中第 144 和 145 行的注释取消即可。}
 
 %=========================================================================================
 \BiSection{公式}{Equations}
@@ -44,8 +58,10 @@
 单个公式的编号如式 (\ref{equ_ch1_pdf}) 所示，该式是标准正态分布的概率密度函数\citeup{Manolakis2005}，从公式可知 \LaTeX 排版的公式比 MathType 美观，而且公式编写效率更高。
 %
 \begin{equation} \label{equ_ch1_pdf}
-f_Z(z) = \frac{1}{\pi\sigma^2} \exp\left(-\frac{|z-\mu_Z|^2}{\sigma^2}\right)
+f_Z(z) = \frac{1}{\pi\sigma^2} \exp\left(-\frac{|z-\mu|^2}{\sigma^2}\right)
 \end{equation}
+%
+式中：$\mu$ 是 Gauss 随机变量 $Z$ 的均值；$\sigma^2$ 是 $Z$ 的方差。
 
 %-----------------------------------------------------------------------------------------
 \BiSubsection{多个公式}{Subequations}
@@ -58,3 +74,5 @@ X(f) &= \int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\dif t \\
 x(t) &= \int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\dif f
 \end{align}
 \end{subequations}
+%
+式中：$x(t)$ 是信号的时域波形；$X(f)$ 是 $x(t)$ 的 Fourier 变换。
