@@ -11,9 +11,9 @@
 图 \ref{fig_ch1_echoes} 是用 Tikz 画的，Visio 画不出这么好看的图。
 %
 \begin{figure}[!ht]
-\centering
-\includegraphics[width=\textwidth]{echoes}
-\caption{图注是五号字。} \label{fig_ch1_echoes}
+	\centering
+	\includegraphics[width=\textwidth]{echoes}
+	\caption{图注是五号字。} \label{fig_ch1_echoes}
 \end{figure}
 
 %-----------------------------------------------------------------------------------------
@@ -27,7 +27,6 @@
 	\subfigure[蓝色的交大校徽]{\includegraphics[width=0.45\textwidth]{xjtu_blue}}
 	\caption{交大校徽 \label{fig_ch1_badge}}
 \end{figure}
-
 
 %=========================================================================================
 \BiSection{表}{Tables} 
@@ -58,7 +57,7 @@
 单个公式的编号如式 (\ref{equ_ch1_pdf}) 所示，该式是标准正态分布的概率密度函数\citeup{Manolakis2005}，从公式可知 \LaTeX 排版的公式比 MathType 美观，而且公式编写效率更高。
 %
 \begin{equation} \label{equ_ch1_pdf}
-f_Z(z) = \frac{1}{\pi\sigma^2} \exp\left(-\frac{|z-\mu|^2}{\sigma^2}\right)
+	f_Z(z) = \frac{1}{\pi\sigma^2} \exp\left(-\frac{|z-\mu|^2}{\sigma^2}\right)
 \end{equation}
 %
 式中：$\mu$ 是 Gauss 随机变量 $Z$ 的均值；$\sigma^2$ 是 $Z$ 的方差。
@@ -69,10 +68,10 @@ f_Z(z) = \frac{1}{\pi\sigma^2} \exp\left(-\frac{|z-\mu|^2}{\sigma^2}\right)
 多个公式作为一个整体可以进行二级编号，如 (\ref{equ_ch1_fourier}) 所示，该式是连续时间 Fourier 变换的正反变换公式\citeup{Vetterli2014}。
 %
 \begin{subequations} \label{equ_ch1_fourier}
-\begin{align}
-X(f) &= \int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\dif t \\
-x(t) &= \int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\dif f
-\end{align}
+	\begin{align}
+		X(f) &= \int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\dif t \\
+		x(t) &= \int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\dif f
+	\end{align}
 \end{subequations}
 %
 式中：$x(t)$ 是信号的时域波形；$X(f)$ 是 $x(t)$ 的 Fourier 变换。
